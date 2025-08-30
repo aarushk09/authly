@@ -1,0 +1,13 @@
+# Flask and web dependencies
+Flask==3.0.0
+Werkzeug==3.0.1
+
+# Computer vision dependencies (for finger detection)
+opencv-python==4.8.1.78
+mediapipe==0.10.8
+numpy==1.24.3
+Pillow==10.1.0
+
+# Additional utilities
+python-dotenv==1.0.0
+requests==2.31.0
