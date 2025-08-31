@@ -9,44 +9,86 @@
 <body>
     <div class="header">
         <h1>Finger Authentication System</h1>
-        <p>Hold up the correct number of fingers to authenticate</p>
+        <p>Secure login with biometric verification</p>
     </div>
 
     <div class="container">
-        <div class="challenge-section">
-            <h2>Authentication Challenge</h2>
-            <p class="challenge-instruction" id="challenge-instruction">Click "Start" to begin the finger detection challenge</p>
-            
-            <div class="target-number" id="target-display">-</div>
-            <div class="timer" id="countdown"></div>
+        <!-- Authentication Form Screen -->
+        <div id="auth-screen" class="auth-screen">
+            <div class="form-container">
+                <h2>Authentication</h2>
+                <p class="auth-description">Login or create an account</p>
+                
+                <div class="form-toggle">
+                    <button type="button" id="login-toggle" class="toggle-btn active">Login</button>
+                    <button type="button" id="signup-toggle" class="toggle-btn">Sign Up</button>
+                </div>
+
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form-content">
+                    <div class="form-group">
+                        <label for="login-username">Username</label>
+                        <input type="text" id="login-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+
+                <!-- Signup Form -->
+                <form id="signup-form" class="auth-form-content hidden">
+                    <div class="form-group">
+                        <label for="signup-username">Username</label>
+                        <input type="text" id="signup-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" required>
+                    </div>
+                    <button type="submit" class="btn">Sign Up</button>
+                </form>
+            </div>
         </div>
 
-        <div class="video-container" id="video-container" style="display: none;">
-            <video id="videoElement" autoplay muted playsinline></video>
-            <canvas id="canvasElement" style="display: none;"></canvas>
+        <!-- Finger Challenge Screen -->
+        <div id="challenge-screen" class="challenge-screen hidden">
+            <div class="challenge-section">
+                <h2>Human Verification</h2>
+                <p class="challenge-instruction" id="challenge-instruction">Please complete the finger challenge to verify you're not a bot</p>
+                
+                <div class="target-number" id="target-display">-</div>
+                <div class="timer" id="countdown"></div>
+            </div>
+
+            <div class="video-container" id="video-container" style="display: none;">
+                <video id="videoElement" autoplay muted playsinline></video>
+                <canvas id="canvasElement" style="display: none;"></canvas>
+            </div>
+
+            <div class="challenge-controls">
+                <button id="start-challenge" class="btn">Start Challenge</button>
+                <button id="retry-challenge" class="btn btn-secondary hidden">Retry</button>
+                <button id="back-to-auth" class="btn btn-secondary">Back to Login</button>
+            </div>
         </div>
 
+        <!-- Success Screen -->
+        <div id="success-screen" class="success-screen hidden">
+            <div class="success-content">
+                <h2>✅ Welcome back, <span id="welcome-username"></span>!</h2>
+                <p>You have successfully verified your identity.</p>
+                <button type="button" id="continue-to-dashboard" class="btn">Continue to Dashboard</button>
+            </div>
+        </div>
+
+        <!-- Status Messages -->
         <div id="status-message" class="status-message" style="display: none;"></div>
-
-        <div class="challenge-controls">
-            <button id="start-challenge" class="btn">Start</button>
-            <button id="retry-challenge" class="btn btn-secondary hidden">Retry</button>
-        </div>
-
-        <div id="user-form" class="user-form hidden">
-            <h3>Create Account</h3>
-            <form id="registration-form">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
-                </div>
-                <button type="submit" class="btn">Complete Registration</button>
-            </form>
-        </div>
     </div>
 
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "601c5f27-f3f8-4914-83d9-9838554ac401",
+    "username": "aarush",
+    "email": "aarushkute8@gmail.com",
+    "password": "scrypt:32768:8:1$ePnbjLUTgZk3Zboo$77d0f41c80b964f4c0080e525e9beaac07188a537b51bef8d9c6c3d732da307d42770f775b7b6cd23bc738e7417e4c0ab8010da0306577ea317b14c7ef4dbab0",
+    "join_date": "2025-08-30 22:08:38",
+    "login_count": 0,
+    "challenges_completed": 0
+  },
+  {
+    "id": "f7b1cae4-9860-4b7e-ae35-306543ef9af7",
+    "username": "aarush32",
+    "email": "aarushkute@gmail.com",
+    "password": "scrypt:32768:8:1$EQGMaKawBtVGazDL$8c8976c82c293af439de088c60cd2f404faa6c85570be3ba014ae59fde013f9688e32f8968f2a60d0b8e7f8612d6388e751bb16620a5613d3d22bc19380eadd8",
+    "join_date": "2025-08-30 22:54:17",
+    "login_count": 2,
+    "challenges_completed": 1
+  }
+]
